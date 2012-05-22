@@ -1,6 +1,6 @@
 require 'formula'
 
-class Ldapvi < Formula
+class LdapviAlt < Formula
   url 'http://www.lichteblau.com/download/ldapvi-1.7.tar.gz'
   homepage 'http://www.lichteblau.com/ldapvi/'
   md5 '6dc2f5441ac5f1e2b5b036e3521012cc'
@@ -18,6 +18,7 @@ class Ldapvi < Formula
   # Backporting the fix from the devel version
   # (namespace conflict with Lion's getline function)
   # http://www.lichteblau.com/git/?p=ldapvi.git;a=commit;h=256ced029c235687bfafdffd07be7d47bf7af39b
+  # gpardikis: additional fix copy_sasl_output function return error
   def patches
     DATA
   end
