@@ -9,6 +9,7 @@ class Pdf2djvu < Formula
   depends_on 'djvulibre'
   depends_on 'libxslt'
   depends_on 'graphicsmagick'
+  depends on 'pkgconfig' => :build
   depends_on 'gnu-sed' => :build
 
   def install
