@@ -1,9 +1,9 @@
 require 'formula'
 
 class Pdf2djvu < Formula
-  homepage ''
-  url 'http://pdf2djvu.googlecode.com/files/pdf2djvu_0.7.12.tar.gz'
-  md5 '4fd56c0763b56b4081fc9c85be16d9d7'
+  homepage 'https://code.google.com/p/pdf2djvu/'
+  url 'https://pdf2djvu.googlecode.com/files/pdf2djvu_0.7.17.tar.gz'
+  sha1 'e15c1922c759cfe868fdc0078404fc77e2a6b548'
 
   depends_on 'poppler'
   depends_on 'djvulibre'
