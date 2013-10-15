@@ -14,6 +14,16 @@ class Pdf2djvu < Formula
 
   def install
 
+    # Clang doesn't thave support for OpenMP
+    if ENV.compiler == :clang
+      opoo <<-EOS.undent
+        Clang currently does not have OpenMP support.
+        Parallel page rendering will be disabled.
+        If you have gcc, you can build pdf2djvu with gcc:
+          brew install pdf2djvu --use-gcc
+      EOS
+    end
+
     system "./configure", "--prefix=#{prefix}"
 
     system "make install"
