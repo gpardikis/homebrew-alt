@@ -14,8 +14,8 @@ class Pdf2djvu < Formula
 
   def install
 
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
+
     system "make install"
   end
 
