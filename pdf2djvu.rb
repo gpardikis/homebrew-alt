@@ -107,3 +107,40 @@ __END__
  if test -n "$djvulibre_bugs"
  then
    result=''
+diff --git a/system.cc b/system.cc
+--- a/system.cc
++++ b/system.cc
+@@ -275,6 +275,12 @@
+   return *this;
+ }
+ 
++Command &Command::operator <<(const File& arg)
++{
++  this->argv.push_back(arg);
++  return *this;
++}
++
+ Command &Command::operator <<(int i)
+ {
+   std::ostringstream stream;
+diff --git a/system.hh b/system.hh
+--- a/system.hh
++++ b/system.hh
+@@ -61,6 +61,8 @@
+   { };
+ };
+ 
++class File;
++
+ class Command
+ {
+ protected:
+@@ -81,6 +83,7 @@
+   };
+   explicit Command(const std::string& command);
+   Command &operator <<(const std::string& arg);
++  Command &operator <<(const File& arg);
+   Command &operator <<(int i);
+   void operator()(std::ostream &my_stdout, bool quiet = false);
+   void operator()(bool quiet = false);
+diff -rupN pdf2djvu-0.7.17/i18n.cc pdf2djvu-0.7.17.new/i18n.cc
