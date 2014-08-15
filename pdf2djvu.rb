@@ -25,9 +25,9 @@ class Pdf2djvu < Formula
       EOS
     end
 
-    system "./configure", "--prefix=#{prefix}"
-
+    system "./configure", "--prefix=#{prefix}" 
     system "make install"
+
   end
 
   # Patches:
