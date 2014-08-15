@@ -8,6 +8,7 @@ class Pdf2djvu < Formula
   depends_on 'poppler'
   depends_on 'djvulibre'
   depends_on 'libxslt'
+  depends_on 'gettext'
   depends_on 'graphicsmagick'
   depends_on 'pkg-config' => :build
   depends_on 'gnu-sed' => :build
