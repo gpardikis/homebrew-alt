@@ -144,3 +144,23 @@ diff --git a/system.hh b/system.hh
    void operator()(std::ostream &my_stdout, bool quiet = false);
    void operator()(bool quiet = false);
 diff -rupN pdf2djvu-0.7.17/i18n.cc pdf2djvu-0.7.17.new/i18n.cc
+--- pdf2djvu-0.7.17/i18n.cc	2013-05-30 21:22:26.000000000 +0100
++++ pdf2djvu-0.7.17.new/i18n.cc	2014-08-15 12:42:05.000000000 +0100
+@@ -15,7 +15,7 @@
+ 
+ void i18n::setup_locale()
+ {
+-  std::setlocale(LC_ALL, "");
++  setlocale(LC_ALL, "");
+   /* Deliberately ignore errors. */
+ }
+ 
+@@ -35,7 +35,7 @@ void i18n::setup(const char *argv0)
+ 
+ void i18n::setup_locale()
+ {
+-  std::setlocale(LC_CTYPE, "");
++  setlocale(LC_CTYPE, "");
+   /* Deliberately ignore errors. */
+ }
+ 
