@@ -14,6 +14,7 @@ class Hstr < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "readline"
+  depends_on "ncurses"
 
   def install
     
