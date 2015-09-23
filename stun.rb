@@ -14,12 +14,22 @@ class Stun < Formula
     system "install", "-c", "stund", "#{sbin}"
   end
 
-  def test
-    system "#{bin}/stun", "stun.sipgate.net"
-  end
-
   def patches
     DATA
+  end
+
+  test do
+    (testpath/"test.sh").write <<-EOS.undent
+    #! /bin/bash -x
+    stun stun.sipgate.net
+    RVAL=$?
+    if [ $RVAL -eq 28 ] || [ $RVAL -eq 255 ]; then
+        exit $RVAL
+    else
+        exit 0
+    fi
+    EOS
+    system "/bin/bash", "./test.sh"
   end
 
 end
