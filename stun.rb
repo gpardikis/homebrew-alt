@@ -3,7 +3,6 @@ require 'formula'
 class Stun < Formula
   homepage 'http://stun.sourceforge.net'
   url 'http://downloads.sourceforge.net/project/stun/stun/0.97/stund-0.97.tgz'
-  md5 '1be9039c2ab859103d70b6c4f4e5edf5'
   sha256 '83e1bf9c21399244c5e8ad19789121a3537399d6523a887a5abc6187adcdb1d7'
   version '0.97'
 
