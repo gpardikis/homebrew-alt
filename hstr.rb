@@ -2,31 +2,31 @@ require "formula"
 
 class Hstr < Formula
   homepage "https://github.com/dvorka/hstr"
-  url "https://github.com/dvorka/hstr/releases/download/1.12/hh-1.12-src.tgz"
-  sha1 "7098ebf487421f24757726852d64f05e6b880ecf"
-  version "1.12"
+  url "https://github.com/dvorka/hstr/archive/1.19.tar.gz"
+  sha256 "1783fa175416e99cb540cbc47092b87dc2362dc2a2f988f59eb66b0d793e4136"
+  version "1.19"
 
-  head do 
-    depends_on "autoconf" => :build
+  head do
     url "https://github.com/dvorka/hstr.git"
   end
 
+  depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "readline"
   depends_on "ncurses"
 
   def install
-    
+
     readline = Formula["readline"]
     ENV['LIBDIRS'] = readline.opt_lib
     ENV['INCDIRS'] = readline.opt_include
 
-    system "aclocal" if build.head?
-    system "autoreconf -i" if build.head?
+    system "aclocal"
+    system "autoreconf -i"
 
     system "./configure", "--prefix=#{prefix}"
-    system "make", "install" 
+    system "make", "install"
   end
 
   test do
