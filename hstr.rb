@@ -4,7 +4,6 @@ class Hstr < Formula
   homepage "https://github.com/dvorka/hstr"
   url "https://github.com/dvorka/hstr/archive/1.19.tar.gz"
   sha256 "1783fa175416e99cb540cbc47092b87dc2362dc2a2f988f59eb66b0d793e4136"
-  version "1.19"
 
   head do
     url "https://github.com/dvorka/hstr.git"

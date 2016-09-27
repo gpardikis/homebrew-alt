@@ -4,19 +4,14 @@ require 'formula'
 
 class Cfv < Formula
   homepage 'http://cfv.sourceforge.net/'
-  url 'http://sourceforge.net/projects/cfv/files/cfv/1.18.3/cfv-1.18.3.tar.gz'
-  md5 '1be9039c2ab859103d70b6c4f4e5edf5'
+  url 'https://downloads.sourceforge.net/project/cfv/cfv/1.18.3/cfv-1.18.3.tar.gz'
+  sha256 'ff28a8aa679932b83eb3b248ed2557c6da5860d5f8456ffe24686253a354cff6'
 
   def install
-    ## test
-    #system "cd", "test"
-    #system "env", "python", "test.py"
-    #system "cd", ".."
-    # install
     system "make", "prefix=#{prefix}", "mandir=#{man}", "install"
   end
 
-  def test
+  test do
     system "#{bin}/cfv"
   end
 

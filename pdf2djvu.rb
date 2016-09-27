@@ -1,9 +1,9 @@
 require 'formula'
 
 class Pdf2djvu < Formula
-  homepage 'https://code.google.com/p/pdf2djvu/'
-  url 'https://pdf2djvu.googlecode.com/files/pdf2djvu_0.7.17.tar.gz'
-  sha1 'e15c1922c759cfe868fdc0078404fc77e2a6b548'
+  homepage 'http://jwilk.net/software/pdf2djvu'
+  url 'https://bitbucket.org/jwilk/pdf2djvu/downloads/pdf2djvu-0.9.4.tar.xz'
+  sha256 'c5702283fc6f39e8c0c49c2dc67b95e321dc926199bc77578d3daeef4de62fa8'
 
   depends_on 'poppler'
   depends_on 'djvulibre'
@@ -25,7 +25,7 @@ class Pdf2djvu < Formula
       EOS
     end
 
-    system "./configure", "--prefix=#{prefix}" 
+    system "./configure", "--prefix=#{prefix}"
     system "make install"
 
   end
@@ -37,7 +37,7 @@ class Pdf2djvu < Formula
     DATA
   end
 
-  def test
+  test do
     system "make test"
   end
 end
